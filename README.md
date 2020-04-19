@@ -21,7 +21,7 @@ webpack.config.js
 ## Глобальные зависимости
 
 - Node.js 12.15
-- [.Net SDK 3.1](https://docs.microsoft.com/en-us/dotnet/core/install/sdk?pivots=os-windows) (в Dockerfile используется alpine-образ от Microsoft, а для других систем есть пакеты)
+- [.Net Core SDK 3.1](https://docs.microsoft.com/en-us/dotnet/core/install/sdk?pivots=os-windows) (в Dockerfile используется alpine-образ от Microsoft, а для других систем есть пакеты)
 
 ## Команды
 
@@ -29,5 +29,11 @@ webpack.config.js
 npm install # устанавливает все зависимости
 npm start # для запуска dev-сервера
 npm run build # для сборки в production
+
+test-dotnet # Тесты запускаются с Expecto. Тестируется код, скомпилированный в .NET
+test-node # Компилирует F# в node.js и запускает mocha, то есть тестирутся исключительно js-код
+
+# TODO: У fable-splitter есть watch mode. Но ещё лучше было бы организовать watch для Expecto
+
 dotnet add src/App.fsproj package Package.Name # установить зависимость F#
 ```
