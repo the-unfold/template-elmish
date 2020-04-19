@@ -6,5 +6,8 @@ jobs:
     name: Build job
     runs-on: ubuntu-18.04
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: docker build
         run: docker build .
