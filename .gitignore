@@ -1,4 +1,8 @@
+# VS Code F# plugin 
 .ionide
+
+# Compiled only for tests
+dist-tests
 
 # Standard Fable gitignore below:
 

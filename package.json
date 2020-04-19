@@ -2,7 +2,12 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "test-node-clean": "rimraf dist-tests",
+    "test-node-compile": "fable-splitter tests -o dist-tests --commonjs",
+    "test-node-run": "mocha dist-tests",
+    "test-node": "run-s test-node-clean test-node-compile test-node-run",
+    "test-dotnet": "dotnet run -p ./tests/Tests.fsproj -c EXPECTO -- --summary"
   },
   "dependencies": {
     "@babel/core": "^7.9.0",
@@ -13,5 +18,11 @@
     "webpack-dev-server": "^3.10.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "fable-splitter": "^2.1.13",
+    "mocha": "^7.1.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
   }
 }

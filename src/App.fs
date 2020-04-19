@@ -1,7 +1,5 @@
 module App
 
-open Elmish
-
 // MODEL
 
 type Model = int
@@ -29,11 +27,3 @@ let view model dispatch =
       [ button [ OnClick (fun _ -> dispatch Decrement) ] [ str "-" ]
         div [] [ str (sprintf "%A" model) ]
         button [ OnClick (fun _ -> dispatch Increment) ] [ str "+" ] ]
-
-open Elmish.React
-
-// App
-Program.mkSimple init update view
-|> Program.withReactBatched "elmish-app"
-|> Program.withConsoleTrace
-|> Program.run
