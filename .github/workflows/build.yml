@@ -1,6 +1,13 @@
-name: 'Build Elmish project'
+name: Test docker workflow
 on: push
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
 
+jobs:
+  build:
+    name: Build job
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: docker build
+        run: docker build .
