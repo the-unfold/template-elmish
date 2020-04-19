@@ -18,9 +18,10 @@ Nuget.Config
 webpack.config.js
 ```
 
-## Требования к системе:
+## Глобальные зависимости
 
-node.js, .net core
+- Node.js 12.15
+- [.Net SDK 3.1](https://docs.microsoft.com/en-us/dotnet/core/install/sdk?pivots=os-windows) (в Dockerfile используется alpine-образ от Microsoft, а для других систем есть пакеты)
 
 ## Команды
 
